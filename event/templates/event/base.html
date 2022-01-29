@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event App</title>
+    {% load static %}  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static '/js/main.js' %}" type="text/javascript"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success  text-white">
+        <a id="logo" class="navbar-brand" href="{% url 'home' %}">Event Crop2X</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto" id="ullogo">
+
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'book_event' %}">Book Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'view_event' %}">View Booked Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'calender_view' %}">View as Calender</a>
+              </li>
+      
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'contact' %}">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'testingevents' %}">Testing</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

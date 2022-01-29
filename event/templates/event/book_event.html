@@ -1,0 +1,23 @@
+{% extends 'event/base.html' %}
+
+{% block content %}
+<section class="container">
+<h1>Book an Event</h1>
+<form method="POST" action="{% url 'book_event' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" class="form-control"  placeholder="Event Title" name="title" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control"  placeholder="Event Details" name="detail" required>
+      </div>
+      <br>
+       <div class="form-group">
+        <input type="datetime-local" class="form-control"  placeholder="Choose a Date" name="date_posted" required>
+      </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</section>
+
+{% endblock %}
